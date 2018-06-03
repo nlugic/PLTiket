@@ -1,0 +1,136 @@
+<Schema name="PLSchema">
+  <Cube name="PLCube" visible="true" cache="true" enabled="true">
+    <Table name="RESULTS_FACTS" alias="">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="REFEREE_DIM_ID" name="Referees">
+      <Hierarchy name="Default" visible="true" hasAll="true" primaryKey="REFEREE_DIM_ID">
+        <Table name="REFEREES_DIM" alias="">
+        </Table>
+        <Level name="RefereeName" visible="true" table="REFEREES_DIM" column="FullName" uniqueMembers="false">
+        </Level>
+        <Level name="ReefereAge" visible="true" table="REFEREES_DIM" column="Age" uniqueMembers="false">
+        </Level>
+        <Level name="ReefereExperience" visible="true" table="REFEREES_DIM" column="Experience" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="STADIUM_DIM_ID" name="Stadiums">
+      <Hierarchy name="Default" visible="true" hasAll="true">
+        <Table name="STADIUMS_DIM" alias="">
+        </Table>
+        <Level name="StadiumCapacity" visible="true" table="STADIUMS_DIM" column="Capacity" uniqueMembers="false">
+        </Level>
+        <Level name="StadiumLocation" visible="true" table="STADIUMS_DIM" column="Place" uniqueMembers="false">
+        </Level>
+        <Level name="StadiumName" visible="true" table="STADIUMS_DIM" column="Name" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYCOACH_DIM_ID" name="AwayCoaches">
+      <Hierarchy name="Default" visible="true" hasAll="true">
+        <Table name="AWAYCOACHES_DIM">
+        </Table>
+        <Level name="AwayCoacheFullName" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachFullName" uniqueMembers="false">
+        </Level>
+        <Level name="AwayCoachAge" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachAge" uniqueMembers="false">
+        </Level>
+        <Level name="AwayCoachDaysCoached" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDays_Coached" uniqueMembers="false">
+        </Level>
+        <Level name="AwayCaochExperience" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachExperience" uniqueMembers="false">
+        </Level>
+        <Level name="AwayCoachDateFrom" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDateFrom" uniqueMembers="false">
+        </Level>
+        <Level name="AwayCoachDateTo" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDateTo" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="HOMECOACH_DIM_ID" name="HomeCoaches">
+      <Hierarchy name="Default" visible="true" hasAll="true">
+        <Table name="HOMECOACHES_DIM" alias="">
+        </Table>
+        <Level name="HomeCoachFullName" visible="true" table="HOMECOACHES_DIM" column="HomeCoachFullName" uniqueMembers="false">
+        </Level>
+        <Level name="HomeCoachAge" visible="true" table="HOMECOACHES_DIM" column="HomeCoachAge" uniqueMembers="false">
+        </Level>
+        <Level name="HomeCoachDaysCoached" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDaysCoached" uniqueMembers="false">
+        </Level>
+        <Level name="HomeCoachExperience" visible="true" table="HOMECOACHES_DIM" column="HomeCoachExperience" uniqueMembers="false">
+        </Level>
+        <Level name="HomeCoachDateFrom" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDateFrom" uniqueMembers="false">
+        </Level>
+        <Level name="HomeCoachDateTo" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDateTo" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="HOMETEAM_DIM_ID" name="HomeTeams">
+      <Hierarchy name="Default" visible="true" hasAll="true">
+        <Table name="HOMETEAMS_DIM" alias="">
+        </Table>
+        <Level name="HomeTeamName" visible="true" table="HOMETEAMS_DIM" column="HomeTeamName" uniqueMembers="false">
+        </Level>
+        <Level name="HomeTeamRelegations" visible="true" table="HOMETEAMS_DIM" column="HomeTeamRelegations" uniqueMembers="false">
+        </Level>
+        <Level name="HomeTeamLeagueTitles" visible="true" table="HOMETEAMS_DIM" column="HomeTeamLeagueTitles" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYTEAM_DIM_ID" name="AwayTeams">
+      <Hierarchy name="Default" visible="true" hasAll="true">
+        <Table name="AWAYTEAMS_DIM" alias="">
+        </Table>
+        <Level name="AwayTeamName" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamName" uniqueMembers="false">
+        </Level>
+        <Level name="AwayTeamRelegations" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamRelegations" uniqueMembers="false">
+        </Level>
+        <Level name="AwayTeamLeagueTitles" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamLeagueTitles" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="HomeGoalsInSeason" column="FTHG" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AwayGoalsInSeason" column="FTAG" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AvgHomeGoalsInSeason" column="FTHG" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="AvgAwayGoalsInSeason" column="FTAG" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="HomeShootsInSeason" column="Hsh" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AwayShootsInSeason" column="Ash" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalShootsInSeason" column="TotalShots" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AvgShootsInSeason" column="TotalShots" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalGoalsInSeason" column="TotalGoalsFullTime" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AvgGoalsInSeason" column="TotalGoalsFullTime" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="DifferentFullTimeResultsInSeason" column="FTR" aggregator="distinct count" visible="true">
+    </Measure>
+    <Measure name="MinAwayTeamAccuracyPct" column="AwayTeamAccuracyPct" aggregator="min" visible="true">
+    </Measure>
+    <Measure name="MinHomeTeamAccuracyPct" column="HomeTeamAccuracyPct" aggregator="min" visible="true">
+    </Measure>
+    <Measure name="MaxHomeTotalSaves" column="HomeTeamTotalSaves" aggregator="max" visible="true">
+    </Measure>
+    <Measure name="MaxAwayTotalSaves" column="AwayTeamTotalSaves" aggregator="max" visible="true">
+    </Measure>
+    <Measure name="TotalRedCards" column="TotalRedCards" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalHomeRedCards" column="HR" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalAwayRedCards" column="AR" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalYellowCards" column="TotalYellowCards" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalHomeYellowCards" column="HY" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="TotalAwayYellowCards" column="AY" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="AvgRedCards" column="TotalRedCards" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="AvgYellowCards" column="TotalYellowCards" aggregator="avg" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
