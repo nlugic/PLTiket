@@ -489,13 +489,13 @@
   </connection>
   <connection>
     <name>PLMartCon</name>
-    <server>localhost</server>
-    <type>H2</type>
+    <server>mysql687.loopia.se</server>
+    <type>MARIADB</type>
     <access>Native</access>
-    <database>Results</database>
-    <port>9092</port>
-    <username>res</username>
-    <password>Encrypted </password>
+    <database>malinovic_se_db_1</database>
+    <port>3306</port>
+    <username>user@m43814</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd66d180ab8b</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -514,7 +514,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>9092</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -556,7 +556,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema>PUBLIC</schema>
+    <schema/>
     <table>AWAYTEAMS_DIM</table>
     <connection>PLMartCon</connection>
     <commit>100</commit>

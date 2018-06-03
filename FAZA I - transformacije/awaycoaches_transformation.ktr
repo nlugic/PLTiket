@@ -489,13 +489,13 @@
   </connection>
   <connection>
     <name>PLMartCon</name>
-    <server>localhost</server>
-    <type>H2</type>
+    <server>mysql687.loopia.se</server>
+    <type>MARIADB</type>
     <access>Native</access>
-    <database>Results</database>
-    <port>9092</port>
-    <username>res</username>
-    <password>Encrypted </password>
+    <database>malinovic_se_db_1</database>
+    <port>3306</port>
+    <username>user@m43814</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd66d180ab8b</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -514,7 +514,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>9092</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -540,11 +540,6 @@
   </connection>
   <order>
     <hop>
-      <from>Table input</from>
-      <to>Replace null DateTo</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Replace null DateTo</from>
       <to>Calculate days coached</to>
       <enabled>Y</enabled>
@@ -554,46 +549,17 @@
       <to>Away coaches lookup/update</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Copy DateTo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Copy DateTo</from>
+      <to>Replace null DateTo</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
-  <step>
-    <name>Calculate days coached</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <calculation>
-      <field_name>Days_Coached</field_name>
-      <calc_type>DATE_DIFF</calc_type>
-      <field_a>DateTo</field_a>
-      <field_b>DateFrom</field_b>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Away coaches lookup/update</name>
     <type>DimensionLookup</type>
@@ -605,7 +571,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema>PUBLIC</schema>
+    <schema/>
     <table>AWAYCOACHES_DIM</table>
     <connection>PLMartCon</connection>
     <commit>100</commit>
@@ -685,7 +651,46 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
+      <xloc>752</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculate days coached</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>Days_Coached</field_name>
+      <calc_type>DATE_DIFF</calc_type>
+      <field_a>DateToCalc</field_a>
+      <field_b>DateFrom</field_b>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
@@ -735,8 +740,8 @@
       </field>
       <field>
         <name>DateTo</name>
-        <value>2018-05-15</value>
-        <mask>yyyy-MM-dd</mask>
+        <value/>
+        <mask/>
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
@@ -757,6 +762,12 @@
         <mask/>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>DateToCalc</name>
+        <value>2018/05/14 00:00:00.000</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -766,7 +777,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>400</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
@@ -799,6 +810,45 @@ FROM TeamCoach TC INNER JOIN Coach C ON TC.Coach_Id = C.Coach_Id</sql>
     </remotesteps>
     <GUI>
       <xloc>112</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Copy DateTo</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>DateToCalc</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>DateTo</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Date</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
