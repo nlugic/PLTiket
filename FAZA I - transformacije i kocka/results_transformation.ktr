@@ -585,11 +585,11 @@
     </hop>
     <hop>
       <from>Awaycoaches_dim lookup/update</from>
-      <to>Copy potential null fields</to>
+      <to>Copy fields for calculation</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Copy potential null fields</from>
+      <from>Copy fields for calculation</from>
       <to>if HSNN == 0.0</to>
       <enabled>Y</enabled>
     </hop>
@@ -973,6 +973,21 @@
       <currency_symbol/>
     </calculation>
     <calculation>
+      <field_name>TotalCards</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>TotalYellowCards</field_a>
+      <field_b>TotalRedCards</field_b>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
       <field_name>HomeTeamTotalCards</field_name>
       <calc_type>ADD</calc_type>
       <field_a>HY</field_a>
@@ -1005,12 +1020,12 @@
     <calculation>
       <field_name>HomeTeamAccuracyPct</field_name>
       <calc_type>PERCENT_1</calc_type>
-      <field_a>HT</field_a>
+      <field_a>HTD</field_a>
       <field_b>HSNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1020,12 +1035,12 @@
     <calculation>
       <field_name>AwayTeamAccuracyPct</field_name>
       <calc_type>PERCENT_1</calc_type>
-      <field_a>AT</field_a>
+      <field_a>ATD</field_a>
       <field_b>ASNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1035,12 +1050,12 @@
     <calculation>
       <field_name>HomeTeamEfficiencyPct</field_name>
       <calc_type>PERCENT_1</calc_type>
-      <field_a>FTHG</field_a>
+      <field_a>HGD</field_a>
       <field_b>HTNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1050,12 +1065,12 @@
     <calculation>
       <field_name>AwayTeamEfficiencyPct</field_name>
       <calc_type>PERCENT_1</calc_type>
-      <field_a>FTAG</field_a>
+      <field_a>AGD</field_a>
       <field_b>ATNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1065,12 +1080,12 @@
     <calculation>
       <field_name>HomeTeamCardsPerFoul</field_name>
       <calc_type>DIVIDE</calc_type>
-      <field_a>HC</field_a>
+      <field_a>HCD</field_a>
       <field_b>HFNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1080,12 +1095,12 @@
     <calculation>
       <field_name>AwayTeamCardsPerFoul</field_name>
       <calc_type>DIVIDE</calc_type>
-      <field_a>AC</field_a>
+      <field_a>ACD</field_a>
       <field_b>AFNN</field_b>
       <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
+      <value_precision>2</value_precision>
       <remove>N</remove>
       <conversion_mask/>
       <decimal_symbol/>
@@ -1102,6 +1117,210 @@
     <GUI>
       <xloc>752</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Copy fields for calculation</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>HSNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Hsh</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>ASNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Ash</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>HTNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>HT</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>ATNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>AT</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>HFNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>HF</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>AFNN</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>AF</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>HTD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>HT</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>ATD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>AT</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>HGD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>FTHG</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>AGD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>FTAG</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>HCD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>HC</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>ACD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>AC</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>2</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1371,10 +1590,6 @@
     <return_field/>
     <fields>
       <field>
-        <column_name>Game_Id</column_name>
-        <stream_name>Game_Id</stream_name>
-      </field>
-      <field>
         <column_name>FTHG</column_name>
         <stream_name>FTHG</stream_name>
       </field>
@@ -1531,6 +1746,10 @@
         <stream_name>TotalRedCards</stream_name>
       </field>
       <field>
+        <column_name>TotalCards</column_name>
+        <stream_name>TotalCards</stream_name>
+      </field>
+      <field>
         <column_name>HomeTeamTotalCards</column_name>
         <stream_name>HomeTeamTotalCards</stream_name>
       </field>
@@ -1543,20 +1762,20 @@
         <stream_name>HomeTeamAccuracyPct</stream_name>
       </field>
       <field>
-        <column_name>HomeTeamEfficiencyPct</column_name>
-        <stream_name>HomeTeamEfficiencyPct</stream_name>
-      </field>
-      <field>
-        <column_name>HomeTeamCardsPerFoul</column_name>
-        <stream_name>HomeTeamCardsPerFoul</stream_name>
-      </field>
-      <field>
         <column_name>AwayTeamAccuracyPct</column_name>
         <stream_name>AwayTeamAccuracyPct</stream_name>
       </field>
       <field>
+        <column_name>HomeTeamEfficiencyPct</column_name>
+        <stream_name>HomeTeamEfficiencyPct</stream_name>
+      </field>
+      <field>
         <column_name>AwayTeamEfficiencyPct</column_name>
         <stream_name>AwayTeamEfficiencyPct</stream_name>
+      </field>
+      <field>
+        <column_name>HomeTeamCardsPerFoul</column_name>
+        <stream_name>HomeTeamCardsPerFoul</stream_name>
       </field>
       <field>
         <column_name>AwayTeamCardsPerFoul</column_name>
@@ -1664,121 +1883,7 @@
     </GUI>
   </step>
   <step>
-    <name>Copy potential null fields</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <calculation>
-      <field_name>HSNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>Hsh</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>ASNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>Ash</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>HTNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>HT</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>ATNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>AT</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>HFNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>HF</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>AFNN</field_name>
-      <calc_type>COPY_FIELD</calc_type>
-      <field_a>AF</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>if HSNN == 0.0</name>
+    <name>if AFNN == 0.0</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
@@ -1788,13 +1893,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>HSNN</field_to_use>
+    <field_to_use>AFNN</field_to_use>
     <target_field/>
     <non_match_default/>
     <fields>
       <field>
         <source_value>0.0</source_value>
-        <target_value>1000.0</target_value>
+        <target_value>1.0</target_value>
       </field>
     </fields>
     <cluster_schema/>
@@ -1805,7 +1910,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
+      <xloc>608</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1844,7 +1949,7 @@
     </GUI>
   </step>
   <step>
-    <name>if HTNN == 0.0</name>
+    <name>if ATNN == 0.0</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
@@ -1854,7 +1959,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>HTNN</field_to_use>
+    <field_to_use>ATNN</field_to_use>
     <target_field/>
     <non_match_default/>
     <fields>
@@ -1871,7 +1976,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>384</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1910,7 +2015,7 @@
     </GUI>
   </step>
   <step>
-    <name>if ATNN == 0.0</name>
+    <name>if HSNN == 0.0</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
@@ -1920,7 +2025,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>ATNN</field_to_use>
+    <field_to_use>HSNN</field_to_use>
     <target_field/>
     <non_match_default/>
     <fields>
@@ -1937,13 +2042,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
+      <xloc>48</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>if AFNN == 0.0</name>
+    <name>if HTNN == 0.0</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
@@ -1953,13 +2058,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>AFNN</field_to_use>
+    <field_to_use>HTNN</field_to_use>
     <target_field/>
     <non_match_default/>
     <fields>
       <field>
         <source_value>0.0</source_value>
-        <target_value>1.0</target_value>
+        <target_value>1000.0</target_value>
       </field>
     </fields>
     <cluster_schema/>
@@ -1970,7 +2075,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>272</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
