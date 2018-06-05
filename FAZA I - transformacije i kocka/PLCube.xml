@@ -6,11 +6,11 @@
       <Hierarchy name="Default" visible="true" hasAll="true" primaryKey="REFEREE_DIM_ID">
         <Table name="REFEREES_DIM">
         </Table>
-        <Level name="RefereeName" visible="true" table="REFEREES_DIM" column="FullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the referee" visible="true" table="REFEREES_DIM" column="FullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="RefereeAge" visible="true" table="REFEREES_DIM" column="Age" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the referee" visible="true" table="REFEREES_DIM" column="Age" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="RefereeExperience" visible="true" table="REFEREES_DIM" column="Experience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Referee&#39;s experience" visible="true" table="REFEREES_DIM" column="Experience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -18,11 +18,11 @@
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="STADIUMS_DIM">
         </Table>
-        <Level name="StadiumCapacity" visible="true" table="STADIUMS_DIM" column="Capacity" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Stadium capacity" visible="true" table="STADIUMS_DIM" column="Capacity" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="StadiumLocation" visible="true" table="STADIUMS_DIM" column="Place" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Location of the stadium" visible="true" table="STADIUMS_DIM" column="Place" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="StadiumName" visible="true" table="STADIUMS_DIM" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the stadium" visible="true" table="STADIUMS_DIM" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -30,13 +30,13 @@
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="AWAYCOACHES_DIM">
         </Table>
-        <Level name="AwayCoachFullName" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="AwayCoachAge" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="AwayCoachDaysCoached" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDays_Coached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Days in position of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDays_Coached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="AwayCaochExperience" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Experience of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
         <Level name="AwayCoachDateFrom" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDateFrom" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
@@ -48,13 +48,13 @@
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="HOMECOACHES_DIM">
         </Table>
-        <Level name="HomeCoachFullName" visible="true" table="HOMECOACHES_DIM" column="HomeCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="HomeCoachAge" visible="true" table="HOMECOACHES_DIM" column="HomeCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="HomeCoachDaysCoached" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDaysCoached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Days in position of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDaysCoached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="HomeCoachExperience" visible="true" table="HOMECOACHES_DIM" column="HomeCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Experience of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
         <Level name="HomeCoachDateFrom" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDateFrom" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
@@ -66,7 +66,7 @@
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="HOMETEAMS_DIM">
         </Table>
-        <Level name="HomeTeamName" visible="true" table="HOMETEAMS_DIM" column="HomeTeamName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the home team" visible="true" table="HOMETEAMS_DIM" column="HomeTeamName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
         <Level name="HomeTeamRelegations" visible="true" table="HOMETEAMS_DIM" column="HomeTeamRelegations" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
@@ -78,7 +78,7 @@
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="AWAYTEAMS_DIM">
         </Table>
-        <Level name="AwayTeamName" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name of the away team" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
         <Level name="AwayTeamRelegations" visible="true" table="AWAYTEAMS_DIM" column="AwayTeamRelegations" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>

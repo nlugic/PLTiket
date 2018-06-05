@@ -1,5 +1,5 @@
-<Schema name="PLSchemaTest">
-  <Cube name="PLCubeTest" visible="true" cache="true" enabled="true">
+<Schema name="PLSchema_minimal">
+  <Cube name="PLCube_minimal" visible="true" cache="true" enabled="true">
     <Table name="RESULTS_FACTS">
     </Table>
     <Dimension type="StandardDimension" visible="true" foreignKey="REFEREE_DIM_ID" highCardinality="false" name="Referees">
@@ -8,49 +8,49 @@
         </Table>
         <Level name="Name of the referee" visible="true" table="REFEREES_DIM" column="FullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Age of the referee" visible="true" table="REFEREES_DIM" column="Age" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the referee" visible="true" table="REFEREES_DIM" column="Age" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Referee&#39;s experience" visible="true" table="REFEREES_DIM" column="Experience" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Referee&#39;s experience" visible="true" table="REFEREES_DIM" column="Experience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
     <Dimension type="StandardDimension" visible="true" foreignKey="STADIUM_DIM_ID" highCardinality="false" name="Stadiums">
-      <Hierarchy name="Default" visible="true" hasAll="true">
+      <Hierarchy name="Default" visible="true" hasAll="false">
         <Table name="STADIUMS_DIM">
         </Table>
         <Level name="Name of the stadium" visible="true" table="STADIUMS_DIM" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYCOACH_DIM_ID" highCardinality="false" name="Away team coaches">
+    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYCOACH_DIM_ID" highCardinality="false" name="AwayCoaches">
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="AWAYCOACHES_DIM">
         </Table>
         <Level name="Name of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Age of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachAge" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Days in position of away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDays_Coached" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Days in position of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachDays_Coached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Experience of away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachExperience" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Experience of the away team&#39;s coach" visible="true" table="AWAYCOACHES_DIM" column="AwayCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="HOMECOACH_DIM_ID" highCardinality="false" name="Home team coaches">
+    <Dimension type="StandardDimension" visible="true" foreignKey="HOMECOACH_DIM_ID" highCardinality="false" name="HomeCoaches">
       <Hierarchy name="Default" visible="true" hasAll="true">
         <Table name="HOMECOACHES_DIM">
         </Table>
         <Level name="Name of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachFullName" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Age of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachAge" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Age of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachAge" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Days in position of home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDaysCoached" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Days in position of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachDaysCoached" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="Experience of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachExperience" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Experience of the home team&#39;s coach" visible="true" table="HOMECOACHES_DIM" column="HomeCoachExperience" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="HOMETEAM_DIM_ID" highCardinality="false" name="Home teams">
+    <Dimension type="StandardDimension" visible="true" foreignKey="HOMETEAM_DIM_ID" highCardinality="false" name="HomeTeams">
       <Hierarchy name="Default" visible="true" hasAll="false">
         <Table name="HOMETEAMS_DIM">
         </Table>
@@ -58,7 +58,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYTEAM_DIM_ID" highCardinality="false" name="Away teams">
+    <Dimension type="StandardDimension" visible="true" foreignKey="AWAYTEAM_DIM_ID" highCardinality="false" name="AwayTeams">
       <Hierarchy name="Default" visible="true" hasAll="false">
         <Table name="AWAYTEAMS_DIM">
         </Table>
