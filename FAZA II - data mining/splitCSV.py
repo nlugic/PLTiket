@@ -9,7 +9,7 @@ headers = next(reader)
 out_writer1.writerow(headers)
 out_writer2.writerow(headers)
 for i, row in enumerate(reader):
-    if i % 10 == 0:
+    if i % 9 in [0]:
         out_writer2.writerow(row)
     else:
         out_writer1.writerow(row)

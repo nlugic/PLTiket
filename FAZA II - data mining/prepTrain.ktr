@@ -664,7 +664,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>E:\FAKULTET\IVgodina\IIsemestar\SPOZ\LOCALP2\BEPS_train.csv</filename>
+    <filename>C:\Users\nlugic\Desktop\rad\PLTiket\LOCALP2\BEPS_train.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -829,8 +829,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>64</yloc>
+      <xloc>480</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -894,7 +894,7 @@
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>192</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -926,7 +926,7 @@
     </remotesteps>
     <GUI>
       <xloc>208</xloc>
-      <yloc>192</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -958,7 +958,7 @@
     </remotesteps>
     <GUI>
       <xloc>304</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -990,7 +990,7 @@
     </remotesteps>
     <GUI>
       <xloc>736</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1022,7 +1022,7 @@
     </remotesteps>
     <GUI>
       <xloc>592</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1054,7 +1054,7 @@
     </remotesteps>
     <GUI>
       <xloc>208</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1102,7 +1102,7 @@
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>64</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1246,7 +1246,7 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1294,7 +1294,7 @@
     </remotesteps>
     <GUI>
       <xloc>448</xloc>
-      <yloc>304</yloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1342,7 +1342,7 @@
     </remotesteps>
     <GUI>
       <xloc>880</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1390,7 +1390,7 @@
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>352</yloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1438,7 +1438,7 @@
     </remotesteps>
     <GUI>
       <xloc>208</xloc>
-      <yloc>64</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1473,8 +1473,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>64</yloc>
+      <xloc>368</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1510,7 +1510,7 @@
     </remotesteps>
     <GUI>
       <xloc>784</xloc>
-      <yloc>64</yloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1546,7 +1546,7 @@
     </remotesteps>
     <GUI>
       <xloc>784</xloc>
-      <yloc>192</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1582,7 +1582,7 @@
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>192</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1618,7 +1618,7 @@
     </remotesteps>
     <GUI>
       <xloc>160</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1654,7 +1654,7 @@
     </remotesteps>
     <GUI>
       <xloc>592</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1690,7 +1690,7 @@
     </remotesteps>
     <GUI>
       <xloc>736</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1726,7 +1726,7 @@
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1890,7 +1890,7 @@
     </remotesteps>
     <GUI>
       <xloc>496</xloc>
-      <yloc>192</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1931,7 +1931,7 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>192</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1972,7 +1972,7 @@
     </remotesteps>
     <GUI>
       <xloc>448</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2013,7 +2013,7 @@
     </remotesteps>
     <GUI>
       <xloc>880</xloc>
-      <yloc>304</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2054,7 +2054,7 @@
     </remotesteps>
     <GUI>
       <xloc>496</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2083,7 +2083,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>E:\FAKULTET\IVgodina\IIsemestar\SPOZ\LOCALP2\trainingData</name>
+      <name>C:\Users\nlugic\Desktop\rad\PLTiket\LOCALP2\trainingData</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -2230,8 +2230,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>512</yloc>
+      <xloc>304</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2268,7 +2268,7 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>416</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2308,8 +2308,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>512</yloc>
+      <xloc>144</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

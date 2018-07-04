@@ -346,12 +346,12 @@
       <name>Model Creating</name>
       <description/>
       <type>SparkSubmit</type>
-      <scriptPath>E:\Spark\bin\spark-submit2.cmd</scriptPath>
+      <scriptPath>C:\Spark\spark-2.3.1-bin-hadoop2.7\bin\spark-submit2.cmd</scriptPath>
       <jobType>Java or Scala</jobType>
       <master>local</master>
-      <jar>C:\Users\Nemanja\Documents\NetBeansProjects\ProbaSaLugicem\dist\ProbaSaLugicem.jar</jar>
+      <jar>C:\Users\nlugic\Desktop\DWNaiveBayes.jar</jar>
       <pyFile/>
-      <className>probasalugicem.ProbaSaLugicem</className>
+      <className>dwnaivebayes.DWNaiveBayes</className>
       <args/>
       <configParams>
       </configParams>
@@ -370,12 +370,12 @@
       <name>Result Creating</name>
       <description/>
       <type>SparkSubmit</type>
-      <scriptPath>E:\Spark\bin\spark-submit2.cmd</scriptPath>
+      <scriptPath>C:\Spark\spark-2.3.1-bin-hadoop2.7\bin\spark-submit2.cmd</scriptPath>
       <jobType>Java or Scala</jobType>
       <master>local</master>
-      <jar>C:\Users\Nemanja\Documents\NetBeansProjects\ProbaSaLugicemPrediction\dist\ProbaSaLugicemPrediction.jar</jar>
+      <jar>C:\Users\nlugic\Desktop\DWNaiveBayesPrediction.jar</jar>
       <pyFile/>
-      <className>probasalugicemprediction.ProbaSaLugicemPrediction</className>
+      <className>dwnaivebayesprediction.DWNaiveBayesPrediction</className>
       <args/>
       <configParams>
       </configParams>
